@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#FFFFFF" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <ImageView
+            android:id="@+id/run_image"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:scaleType="matrix"
+            android:src="@drawable/mi_laucher_default_homebg" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_alignParentRight="true"
+        android:layout_margin="20dip" >
+
+        <TextView
+            android:id="@+id/tv_page"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/mi_laucher_pageid"
+            android:gravity="center"
+            android:text="1"
+            android:textColor="#ffffff" />
+    </RelativeLayout>
+
+    <com.hoyouly.baidunews.view.ScrollLayout
+        android:id="@+id/views"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="50dip" />
+
+</RelativeLayout>

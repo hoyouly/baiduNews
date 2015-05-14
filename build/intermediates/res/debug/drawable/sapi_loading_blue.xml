@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list android:oneshot="false"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:duration="100" android:drawable="@drawable/sapi_loading_001_b" />
+    <item android:duration="100" android:drawable="@drawable/sapi_loading_002_b" />
+    <item android:duration="100" android:drawable="@drawable/sapi_loading_003_b" />
+    <item android:duration="100" android:drawable="@drawable/sapi_loading_004_b" />
+    <item android:duration="100" android:drawable="@drawable/sapi_loading_005_b" />
+    <item android:duration="100" android:drawable="@drawable/sapi_loading_006_b" />
+    <item android:duration="100" android:drawable="@drawable/sapi_loading_007_b" />
+    <item android:duration="100" android:drawable="@drawable/sapi_loading_008_b" />
+    <item android:duration="100" android:drawable="@drawable/sapi_loading_009_b" />
+    <item android:duration="100" android:drawable="@drawable/sapi_loading_010_b" />
+    <item android:duration="100" android:drawable="@drawable/sapi_loading_011_b" />
+    <item android:duration="100" android:drawable="@drawable/sapi_loading_012_b" />
+</animation-list>
+<!-- From: file:/Users/hoyouly/AndroidStudioProjects/baiduNews/baiduNews/res/drawable/sapi_loading_blue.xml -->

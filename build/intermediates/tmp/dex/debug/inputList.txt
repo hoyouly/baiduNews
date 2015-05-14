@@ -1,0 +1,6 @@
+/Users/hoyouly/AndroidStudioProjects/baiduNews/baiduNews/build/intermediates/classes/debug
+/Users/hoyouly/AndroidStudioProjects/baiduNews/baiduNews/build/intermediates/pre-dexed/debug/classes-ad95a36947ee5f5d2538dbafe3eac922108ae6ed.jar
+/Users/hoyouly/AndroidStudioProjects/baiduNews/baiduNews/build/intermediates/pre-dexed/debug/gson-2.2-99954b7bef60fde3549dc529e36a58ed4f9fb501.jar
+/Users/hoyouly/AndroidStudioProjects/baiduNews/baiduNews/build/intermediates/pre-dexed/debug/jsoup-1.7.2-e0ad1c2d63325001f48ae2a6b4248051020d22d2.jar
+/Users/hoyouly/AndroidStudioProjects/baiduNews/baiduNews/build/intermediates/pre-dexed/debug/xUtils-2.4.7-752c64061fc857694d74fc001a0c4a5c0728ff1c.jar
+/Users/hoyouly/AndroidStudioProjects/baiduNews/baiduNews/build/intermediates/pre-dexed/debug/android-support-v4-fef476996a6791c322e8e362e1b78151779d8a25.jar
