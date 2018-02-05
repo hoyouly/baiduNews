@@ -246,7 +246,7 @@ public class CommonFragment extends Fragment implements MyListViewListener, Runn
             @Override
             public void onResponse(final String response) {
                 if (!TextUtils.isEmpty(response)) {
-                    if (null == items) items = adapter.getDatas();
+//                    if (null == items) items = adapter.getDatas();
                     handler.post(new Runnable() {
                         @Override
                         public void run() {

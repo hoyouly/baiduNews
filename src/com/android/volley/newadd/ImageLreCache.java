@@ -24,6 +24,8 @@ import java.security.NoSuchAlgorithmException;
 
 /**
  * Created by saymagic on 15/1/27.
+ *
+ * LruCache 主要算法原理是把最近使用的对象用强引用存储在 LinkedHashMap 中，并且把最近最少使用的对象在缓存值达到预设定值之前从内存中移除。
  */
 public class ImageLreCache extends LruCache<String, Bitmap> implements ImageLoader.ImageCache {
 
@@ -114,18 +116,21 @@ public class ImageLreCache extends LruCache<String, Bitmap> implements ImageLoad
     }
 
     // 该方法会判断当前sd卡是否存在，然后选择缓存地址
+    // 存在则把缓存放到sd上，不存在则把缓存放到内存里面
     @TargetApi(Build.VERSION_CODES.GINGERBREAD)
     public static File getDiskCacheDir(Context context, String uniqueName) {
         String cachePath;
         if (Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState()) || !Environment.isExternalStorageRemovable()) {
-            cachePath = context.getExternalCacheDir().getPath();
+            cachePath = context.getExternalCacheDir().getPath();//得到的路径是  /sdcard/Android/data/<application package>/cache
         } else {
-            cachePath = context.getCacheDir().getPath();
+            cachePath = context.getCacheDir().getPath();// 得到的路径是  /data/data/<application package>/cache
         }
+        //uniqueName  不同类型的数据进行区分而设定的一个唯一值
         return new File(cachePath + File.separator + uniqueName);
     }
 
-    // 获得应用version号码
+    // 获得应用version号码  每当版本号改变，缓存路径下存储的所有数据都会被清除掉，
+    // 因为DiskLruCache认为当应用程序有版本更新的时候，所有的数据都应该从网上重新获取
     public int getAppVersion(Context context) {
         try {
             PackageInfo info = context.getPackageManager().getPackageInfo(context.getPackageName(), 0);

@@ -299,10 +299,12 @@ public final class DiskLruCache implements Closeable {
      * Opens the cache in {@code directory}, creating a cache if none exists
      * there.
      *
-     * @param directory a writable directory
-     * @param appVersion
-     * @param valueCount the number of values per cache entry. Must be positive.
-     * @param maxSize the maximum number of bytes this cache should use to store
+     * @param directory a writable directory  数据的缓存地址,都会存放在 /sdcard/Android/data/<application package>/cache 这个路径下
+     *        好处：第一，这是存储在SD卡上的，因此即使缓存再多的数据也不会对手机的内置存储空间有任何影响，只要SD卡空间足够就行。
+     *             第二，这个路径被Android系统认定为应用程序的缓存路径，当程序被卸载的时候，这里的数据也会一起被清除掉，这样就不会出现删除程序之后手机上还有很多残留数据的问题。
+     * @param appVersion  指定当前应用程序的版本号
+     * @param valueCount the number of values per cache entry. Must be positive. 指定同一个key可以对应多少个缓存文件，基本都是传1
+     * @param maxSize the maximum number of bytes this cache should use to store  最多可以缓存多少字节的数据  通常 10M的大小
      * @throws java.io.IOException if reading or writing the cache directory fails
      */
     public static DiskLruCache open(File directory, int appVersion, int valueCount, long maxSize)

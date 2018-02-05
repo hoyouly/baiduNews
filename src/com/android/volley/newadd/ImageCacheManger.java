@@ -1,7 +1,5 @@
 package com.android.volley.newadd;
 
-import me.saymagic.imagecachedemo.DemoApplication;
-
 import android.app.ActivityManager;
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -9,6 +7,7 @@ import android.widget.ImageView;
 
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.ImageLoader;
+import com.hoyouly.baidunews.app.MyApplication;
 
 /**
  * Created by saymagic on 15/1/27.
@@ -16,7 +15,7 @@ import com.android.volley.toolbox.ImageLoader;
 public class ImageCacheManger {
 
 	// 取运行内存阈值的1/8作为图片缓存
-	private static final int MEM_CACHE_SIZE = 1024 * 1024 * ((ActivityManager) DemoApplication.getInstance().getSystemService(Context.ACTIVITY_SERVICE)).getMemoryClass() / 8;
+	private static final int MEM_CACHE_SIZE = 1024 * 1024 * ((ActivityManager) MyApplication.getInstance().getSystemService(Context.ACTIVITY_SERVICE)).getMemoryClass() / 8;
 	public static ImageLreCache mImageLreCache = new ImageLreCache(MEM_CACHE_SIZE, "images", 10 * 1024 * 1024);
 	public static ImageLoader mImageLoder = new ImageLoader(RequesQueuetManager.mRequestQueue, mImageLreCache);
 
@@ -66,8 +65,8 @@ public class ImageCacheManger {
 	 * 
 	 * @param url 远程url地址
 	 * @param view 待现实图片的view
-	 * @param defaultImageBitmap 默认显示的图片
-	 * @param errorImageBitmap 网络出错时显示的图片
+	 * @param defaultImageResId 默认显示的图片
+	 * @param errorImageResId 网络出错时显示的图片
 	 */
 	public static ImageLoader.ImageContainer loadImage(final String url, final ImageView view, final int defaultImageResId, final int errorImageResId) {
 		return loadImage(url, ImageLoader.getImageListener(view, defaultImageResId, errorImageResId));
